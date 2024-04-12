@@ -1,0 +1,66 @@
+[
+    {
+        "segment": "sedanes",
+        "image": "./src/auditt.jpg",
+        "title": "BMW M3 E46",
+        "HP": "355 HP",
+        "0-100 km/h": "4.9 sec",
+        "Torque": "370Nm",
+        "Traccion": "RWD"
+    },
+    {
+        "segment": "sedanes",
+        "image": "./src/c63.jpg",
+        "title": "Mercedes Benz C63 AMG",
+        "HP": "487 HP",
+        "0-100 km/h": "4.5 sec",
+        "Torque": "600Nm",
+        "Traccion": "RWD"
+    },
+    {
+        "segment": "coupes",
+        "image": "./src/auditt.jpg",
+        "title": "Audi TT",
+        "HP": "211 HP",
+        "0-100 km/h": "5.6 sec",
+        "Torque": "350Nm",
+        "Traccion": "QUATTRO (AWD)"
+    },
+    {
+        "segment": "coupes",
+        "image": "./src/toyota86.jpg",
+        "title": "Toyota 86",
+        "HP": "200 HP",
+        "0-100 km/h": "7.6 sec",
+        "Torque": "205Nm",
+        "Traccion": "RWD"
+    },
+    {
+        "segment": "hatchbacks",
+        "image": "./src/golfgti.jpg",
+        "title": "Golf GTI",
+        "HP": "228 HP",
+        "0-100 km/h": "6.4 sec",
+        "Torque": "258Nm",
+        "Traccion": "FWD"
+    },
+    {
+        "segment": "hatchbacks",
+        "image": "./src/toyotayaris.jpg",
+        "title": "Toyota Yaris GR",
+        "HP": "192 HP",
+        "0-100 km/h": "5.5 sec",
+        "Torque": "360Nm",
+        "Traccion": "AWD"
+    },
+    {
+        "segment": "rey del track",
+        "image": "./src/twingo.jpg",
+        "title": "Renault Twingo",
+        "HP": "75 HP",
+        "0-100 km/h": "5 días hábiles",
+        "Torque": "105Nm",
+        "Traccion": "FWD"
+    }
+]
+
