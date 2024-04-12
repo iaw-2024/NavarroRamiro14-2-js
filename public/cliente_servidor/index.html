@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cliente-Servidor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <script src="./cliente_servidor/cliente_servidor.js"></script>
+
+<nav class="bg-gray-800 p-2 mt-0 w-full z-10 top-0">
+    <div class="container mx-auto flex flex-wrap items-center justify-between">
+        <div class="flex justify-between items-center w-full md:w-auto">
+            <a href="/" class="text-white font-extrabold no-underline hover:text-white hover:no-underline">
+                <span class="text-2xl pl-2">Cliente - Servidor</span>
+            </a>
+            <button class="text-white cursor-pointer md:hidden" type="button" onclick="toggleMenu()">
+                <svg class="w-6 h-6" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
+                    <path d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </div>
+        <div class="hidden md:flex md:items-center md:w-auto" id="menu">
+            <ul class="list-reset flex justify-end flex-1 items-center">
+                <li class="mr-3">
+                    <a class="inline-block py-2 px-4 text-white no-underline" href="/dom">DOM</a>
+                </li>
+                <li class="mr-3">
+                    <a class="inline-block py-2 px-4 text-white no-underline" href="/express">Express</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<script>
+    function toggleMenu() {
+        var menu = document.getElementById('menu');
+        if (menu.classList.contains('hidden')) {
+            menu.classList.remove('hidden');
+        } else {
+            menu.classList.add('hidden');
+        }
+    }
+</script>
+
+<div class="flex justify-center">
+    <button class="mx-auto my-10 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full sm:w-auto"
+        onclick="renderTable(); this.classList.add('hidden')">Render Table</button>
+</div>
+
+</body>
+</html>
