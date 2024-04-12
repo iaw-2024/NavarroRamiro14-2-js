@@ -4,7 +4,7 @@ const fs = require("fs");
 
 app.get("/express", (req, res) => {
   const html = fs.readFileSync("./public/express/index.html", "utf8");
-  fs.readFile("./datos.json", (err, data) => {
+  fs.readFile("./public/datos.json", (err, data) => {
     if (err) {
       console.log(err);
     } else {
@@ -58,9 +58,27 @@ app.get("/express", (req, res) => {
     }
   });
 });
-app.get("/cliente_servidor", (req, res) =>
-  res.send("Cliente Servidor on Vercel!")
-);
+
+app.get("/datos", (req, res) => {
+  fs.readFile("./public/datos.json", (err, data) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.send(JSON.parse(data));
+    }
+  });
+});
+
+app.get("/cliente_servidor", (req, res) => {
+  fs.readFile("./public/cliente_servidor/index.html", "utf8", (err, data) => {
+      if (err) {
+          console.log(err);
+      } else {
+          res.send(data);
+      }   
+  });
+})
+
 app.use(express.static("public"));
 
 app.listen(3001, () => console.log("Server ready on port 3001."));

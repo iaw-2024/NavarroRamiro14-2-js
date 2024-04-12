@@ -1,7 +1,7 @@
 [
     {
         "segment": "sedanes",
-        "image": "./src/auditt.jpg",
+        "image": "./src/e46.jpg",
         "title": "BMW M3 E46",
         "HP": "355 HP",
         "0-100 km/h": "4.9 sec",
