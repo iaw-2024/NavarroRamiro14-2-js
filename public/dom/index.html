@@ -11,13 +11,13 @@
 <body>
     <script src="dom.js"></script>
     <nav class="bg-gray-800 p-2 mt-0 w-full z-10 top-0">
-        <div class="container mx-auto flex flex-wrap items-center">
-            <div class="flex w-full md:w-auto justify-center md:justify-start text-white font-extrabold">
+        <div class="container mx-auto flex flex-wrap items-center justify-between">
+            <div class="flex justify-center md:justify-start text-white font-extrabold">
                 <a href="/" class="text-white no-underline hover:text-white hover:no-underline">
                     <span class="text-2xl pl-2">DOM</span>
                 </a>
             </div>
-            <div class="flex content-center w-full md:w-auto md:content-start">
+            <div class="md:flex hidden content-center md:content-start">
                 <ul class="list-reset flex justify-between flex-1 md:flex-none items-center">
                     <li class="mr-3">
                         <a class="inline-block py-2 px-4 text-white no-underline"
@@ -28,9 +28,23 @@
                     </li>
                 </ul>
             </div>
+            <button class="text-white inline-block md:hidden" onclick="toggleMenu()">
+                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                    <path d="M0 3h20v2H0zM0 9h20v2H0zM0 15h20v2H0z" />
+                </svg>
+            </button>
         </div>
     </nav>
-
+    <script>
+        function toggleMenu() {
+            var menu = document.querySelector('nav div.md\\:flex');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+            } else {
+                menu.classList.add('hidden');
+            }
+        }
+    </script>
     <div class="flex justify-center">
         <button class="mx-auto my-10 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
             onclick="renderTable() ; this.style.display = 'none'">Render Table</button>

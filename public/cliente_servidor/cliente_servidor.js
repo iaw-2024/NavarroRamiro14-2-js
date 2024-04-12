@@ -2,6 +2,9 @@ function renderTable() {
   fetch("http://localhost:3001/datos")
     .then(response => response.json())
     .then(datos => {
+      const divResponsive = document.createElement('div');
+      divResponsive.className = 'overflow-x-auto';
+      
       const tabla = document.createElement("table");
       tabla.className = "min-w-full divide-y divide-gray-200";
 
@@ -30,6 +33,7 @@ function renderTable() {
             td.className += " uppercase font-bold";
             td.textContent = valor;
           } else if (key === 'image') {
+            td.className = 'whitespace-nowrap py-2';
             const img = document.createElement('img');
             img.src = valor;
             img.alt = 'Image';
@@ -43,6 +47,7 @@ function renderTable() {
         tbody.appendChild(fila);
       });
       tabla.appendChild(tbody);
-      document.body.appendChild(tabla);
+      divResponsive.appendChild(tabla);
+      document.body.appendChild(divResponsive);
     });
 }

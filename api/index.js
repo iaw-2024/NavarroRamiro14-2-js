@@ -8,9 +8,8 @@ app.get("/express", (req, res) => {
     if (err) {
       console.log(err);
     } else {
-      //console.log(JSON.parse(data));
       const json = JSON.parse(data);
-      let table = '<table class="mx-auto mt-10 table-auto border border-collapse border-slate-200 w-70 divide-y divide-gray-200">';
+      let table = '<div class="overflow-x-auto"><table class="min-w-full divide-y divide-gray-200">';
       table += '<thead class="bg-gray-50">';
       table += "<tr>";
       for (let i = 0; Object.keys(json[0]).length > i; i++) {
@@ -27,16 +26,12 @@ app.get("/express", (req, res) => {
         for (let j = 0; Object.keys(json[i]).length > j; j++) {
           const value = json[i][Object.keys(json[i])[j]];
           const key = Object.keys(json[i])[j];
-          //If key == segment, make it bold uppercase
           if (key === "segment") {
             table +=
-              '<td class="px-6 py-4 whitespace-nowrap uppercase">' +
-              "<b>" +
+              '<td class="px-6 py-4 whitespace-nowrap uppercase font-bold">' +
               value +
-              "</b>" +
               "</td>";
-          }else
-          if (key === "image") {
+          } else if (key === "image") {
             table +=
               '<td class="whitespace-nowrap py-2">' +
               '<img class="object-contain h-20 rounded-full mx-auto" src="' +
@@ -53,7 +48,7 @@ app.get("/express", (req, res) => {
         table += "</tr>";
       }
       table += "</tbody>";
-      table += "</table>";
+      table += "</table></div>";
       res.send(html.replace("<Tabla/>", table));
     }
   });
